@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio#1</title>
+</head>
+<body>
+    <h1>Laboratorio#1</h1>
+    <h2>Christian Dutary</h2>
+    <!--1. Escribir en una etiqueta "p" dentro del HTML, la respuesta a la pregunta. Que es Js y en que se asemeja a Java?-->
+    <p>Java es un lenguaje de programación orientado a objetos. Javascript es un lenguaje que permite programar 
+        sin necesidad de crear clases y a diferencia de Java no requiere hacer la programación orientándose a objetos, aunque sí lo permite.</p>
+
+    <script src="lab1script.js"></script>
+    
+</body>
+</html>
