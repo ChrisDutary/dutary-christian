@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laboratorio#3</title>
+    <style>
+   
+        body {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f63c35;
+        }
+
+        /* Para centrar el contenido dentro de un contenedor */
+        div {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Para ajustar el tamaño de los inputs y botones */
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+    </style>
+    <script src="lab3script.js" defer></script>
+</head>
+<body>
+    <div>
+        <h1>Laboratorio#3</h1>
+        <h3>Christian Dutary</h3>
+
+        <h2>Problema#1 (Palíndromo)</h2>
+        <input type="text" id="numeroPalindromo" placeholder="Ingrese algún número">
+        <button onclick="numPalindromo()">Comprobar</button>
+        <p id="resultadoPalindromo"></p>
+
+        <h2>Problema#2 (Contar letras)</h2>
+        <input type="text" id="letras" placeholder="Ingrese algún texto">
+        <button onclick="cuentaletras()">Contar</button>
+        <p id="resultadoLetras"></p>
+
+        <h2>Problema#3 (Bisiesto)</h2>
+        <input type="number" id="anioBisiesto" placeholder="Ingrese un año">
+        <button onclick="Bisiesto()">Comprobar</button>
+        <p id="resultadoBisiesto"></p>
+
+        <h2>Problema#4 (Sumar primos)</h2>
+        <input type="number" id="numeroPrimo" placeholder="Ingrese un número">
+        <button onclick="numPrimos()">Sumar</button>
+        <p id="resultadodePrimos"></p>
+    </div>
+</body>
+</html>
