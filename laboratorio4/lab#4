@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorioo#4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #00796b;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        span {
+            font-weight: bold;
+            color: #00796b;
+        }
+
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 20px;
+            }
+
+            input[type="text"] {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Escribe algo:</h2>
+        <input type="text" id="inputText" placeholder="duddunsua no te tire">
+        <p>Texto volteao: <span id="reversedText"></span></p>
+    </div>
+
+    <script>
+
+        const TextReverserModule = (function() {
+
+            function reverseText(text) {
+                return text.split('').reverse().join('');
+            }
+
+            function init(inputSelector, outputSelector) {
+                const inputField = document.querySelector(inputSelector);
+                const outputSpan = document.querySelector(outputSelector);
+
+                inputField.addEventListener('input', function() {
+                    const reversed = reverseText(inputField.value);
+                    outputSpan.textContent = reversed;
+                });
+            }
+
+            return {
+                init: init
+            };
+        })();
+
+        TextReverserModule.init('#inputText', '#reversedText');
+    </script>
+
+</body>
+</html>
