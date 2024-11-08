@@ -1,0 +1,270 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #002634;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+.logo-container {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 300px;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.search-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 60px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.search-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-row {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input-container {
+    flex: 2;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.search-type-container {
+    flex: 1;
+}
+
+#searchInput {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+}
+
+#searchType {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #2196f3;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#searchButton {
+    background-color: #35beef;
+}
+
+#searchButton:hover {
+    background-color: #2798c5;
+}
+
+#clearButton {
+    background-color: #35beef;
+}
+
+#clearButton:hover {
+    background-color: #289ec9;
+}
+
+.result-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.pokemon-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+
+.pokemon-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: start; /
+}
+
+.info-section h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #333;
+    padding-left: 5px;
+    border-bottom: 2px solid #35beef;
+}
+
+.pokemon-list {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+.pokemon-list li {
+    position: relative;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.pokemon-list li::before {
+    content: "·";
+    position: absolute;
+    left: -15px;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#searchButton {
+    background-color: #35beef;
+}
+
+#searchButton:hover {
+    background-color: #2798c5;
+}
+
+
+
+.result-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.pokemon-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.pokemon-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.info-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-left: -5px;
+}
+
+.pokemon-list {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+.pokemon-list li {
+    position: relative;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.pokemon-list li::before {
+    content: "·";
+    position: absolute;
+    left: -15px;
+    color: #333;
+}
+
+.info-section2{
+    /* text-align:right; */
+     padding: 0 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+.corner-image {
+    position: absolute;
+    top: 10px; /* Ajusta según lo necesites */
+    right: 10px; /* Ajusta según lo necesites */
+}
+
+.corner-image img {
+    width: 95px; /* Ajusta el tamaño según lo necesites */
+    height:auto;
+}

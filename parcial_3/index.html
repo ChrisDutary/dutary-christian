@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <a href="https://github.com/ChrisDutary/dutary-christian" target="_blank" class="corner-image">
+        <img src="github3.png" alt="Link al repositorio">
+    </a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeApi - Buscador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-container">
+        <div class="logo-container">
+            <img src="pokeapi.png" alt="PokeApi" class="logo">
+        </div>
+        <div class="search-container">
+            <div class="search-content">
+                <h2>Buscador de pokemones</h2>
+                <p>Busca desde pokemones hasta las habilidades de los mismos.</p>
+                <div class="search-box">
+                    <div class="search-row">
+                        <div class="search-input-container">
+                            <input type="text" id="searchInput" placeholder="Buscar">
+                        </div>
+                        <div class="search-type-container">
+                            <select id="searchType">
+                                <option value="pokemon">Por pokemon</option>
+                                <option value="ability">Por habilidad</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="buttons-container">
+                        <button id="clearButton">Limpiar</button>
+                        <button id="searchButton">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="resultContainer" class="result-container hidden">
+            <!-- Los resultados se mostrarán aquí -->
+        </div>
+    </main>
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
