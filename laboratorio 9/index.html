@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeApi - Buscador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-container">
+        <div class="logo-container">
+            <img src="pokeapi2.png" alt="PokeApi" class="logo">
+        </div>
+        <div class="search-container">
+            <div class="search-content">
+                <h2>Buscador de pokemones</h2>
+                <p>Busca desde pokemones hasta las habilidades de los mismos.</p>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar">
+                    <div class="buttons-container">
+                        <button id="clearButton" disabled>Limpiar</button>
+                        <button id="searchButton">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
