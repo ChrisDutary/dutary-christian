@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Carreras de Fórmula 1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #15151e;
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .sidebar img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .nav-item {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: #e10600;
+        }
+
+        /* Main content styles */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .race-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .race-card h2 {
+            color: #e10600;
+            margin-top: 0;
+        }
+
+        .race-card-content {
+            flex: 1;
+        }
+
+        h1 {
+            color: #e10600;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_195,q_auto/etc/designs/fom-website/images/f1_logo" alt="F1 Logo">
+        <a href="F1_home.html" class="nav-item">Inicio</a>
+        <a href="F1_pilotos.html" class="nav-item">Pilotos</a>
+        <a href="F1_teams" class="nav-item">Equipos</a>
+        <a href="F1_carreras.html" class="nav-item active">Carreras</a>
+        <a href="F1_pistas.html" class="nav-item">Pistas</a>
+        <a href="Comparador.html" class="nav-item">Comparador</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <h1>Datos de Carreras de Fórmula 1</h1>
+        <div id="results" class="container"></div>
+    </div>
+
+    <script src="carrera.js"></script>
+</body>
+</html>

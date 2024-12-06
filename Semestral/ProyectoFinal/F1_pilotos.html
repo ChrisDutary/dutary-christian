@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 - Pilotos</title>
+    <style>
+        :root {
+            --f1-red: #e10600;
+            --f1-dark: #15151e;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--f1-dark);
+            color: white;
+            font-family: 'Titillium Web', sans-serif;
+        }
+
+        .sidebar {
+            background-color: var(--f1-dark);
+            width: 60px;
+            position: fixed;
+            height: 100%;
+            border-right: 1px solid #333;
+            z-index: 1000;
+            overflow: hidden;
+            transition: width 0.75s ease;
+        }
+
+        .sidebar:hover {
+            width: 250px;
+        }
+
+        .logo-container {
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .sidebar:hover .logo-container img {
+            width: 100%;
+        }
+
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            display: block;
+            transition: background-color 0.3s;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .sidebar:hover .nav-item {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .nav-item:hover {
+            background-color: var(--f1-red);
+        }
+
+        .nav-item.active {
+            background-color: var(--f1-red);
+        }
+
+        .container {
+            margin-left: 60px;
+            padding: 20px;
+            transition: margin-left 0.75s ease;
+        }
+
+        .sidebar:hover ~ .container {
+            margin-left: 250px;
+        }
+
+        .content-header {
+            background-color: var(--f1-red);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        #resultado {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .driver {
+            background-color: #1f1f27;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .driver:hover {
+            transform: translateY(-5px);
+        }
+
+        .driver h2 {
+            color: var(--f1-red);
+            margin-top: 0;
+        }
+
+        .driver img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--f1-red);
+        }
+
+        .car, .laps {
+            background-color: #2a2a32;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: var(--f1-red);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #b30500;
+        }
+
+        .stats-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: var(--f1-red);
+        }
+
+        .team-color-indicator {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            
+            .sidebar:hover {
+                width: 100%;
+            }
+
+            .container {
+                margin-left: 0;
+            }
+            
+            #resultado {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script defer src="app-pilotos.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-container">
+            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_195,q_auto/etc/designs/fom-website/images/f1_logo" alt="F1 Logo" style="width: 40px; transition: width 0.75s ease;">
+        </div>
+        <nav>
+            <a href="F1_home.html" class="nav-item">Inicio</a>
+            <a href="pilotos.html" class="nav-item active">Pilotos</a>
+            <a href="F1_teams" class="nav-item">Equipos</a>
+            <a href="F1_carreras.html" class="nav-item">Carreras</a>
+            <a href="F1_pistas.html" class="nav-item">Pistas</a>
+            <a href="Comparador.html" class="nav-item">Comparador</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Pilotos F1</h1>
+        </div>
+
+        <div class="controls">
+            <button onclick="mostrarPilotos()">Mostrar Pilotos</button>
+            <button onclick="mostrarEstadisticasVueltas()">Mostrar Estadísticas</button>
+        </div>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script src="app-pilotos.js"></script>
+</body>
+</html>

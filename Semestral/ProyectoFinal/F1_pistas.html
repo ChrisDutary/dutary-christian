@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Pistas de Fórmula 1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #000000;
+        }
+
+        .sidebar {
+            width: 60px;
+            height: 100%;
+            background-color: #e20a0a;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #fff;
+            overflow: hidden;
+            border-radius: 1rem 0 0 1rem;
+            transition: width 0.75s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar:hover {
+            width: 200px;
+        }
+
+        .sidebar img {
+            width: 40px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar:hover img {
+            transform: scale(1.2);
+        }
+
+        .nav-item {
+            width: 100%;
+            padding: 10px 0;
+            text-align: left;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 10px 0;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateX(-20px);
+        }
+
+        .sidebar:hover .nav-item {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .nav-item.active {
+            background-color: #000;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .nav-item.active:hover {
+            background-color: #333;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        h1 {
+            color: #e10600;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        #results {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: transparent;
+        }
+
+        .track-card {
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .track-card:hover {
+            transform: scale(1.05);
+        }
+
+        .track-info {
+            padding: 15px;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .track-card img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-radius: 0;
+            }
+
+            .sidebar:hover {
+                width: 100%;
+            }
+
+            #results {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_195,q_auto/etc/designs/fom-website/images/f1_logo" alt="Logo F1">
+        <a href="F1_home.html" class="nav-item">Inicio</a>
+        <a href="F1_pilotos.html" class="nav-item">Pilotos</a>
+        <a href="F1_teams.html" class="nav-item">Equipos</a>
+        <a href="F1_carreras.html" class="nav-item">Carreras</a>
+        <a href="F1_pistas.html" class="nav-item active">Pistas</a>
+        <a href="Comparador.html" class="nav-item">Comparador</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Datos de Pistas de Fórmula 1</h1>
+        <div id="results"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '73e12fc717mshb9d1a02a698bc14p138f57jsne7fc0ec991f6',
+                    'X-RapidAPI-Host': 'api-formula-1.p.rapidapi.com'
+                }
+            };
+
+            fetch('https://api-formula-1.p.rapidapi.com/circuits', options)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Datos completos:', data);
+
+                    const resultsDiv = document.getElementById('results');
+                    resultsDiv.innerHTML = '';
+
+                    if (data.response && data.response.length > 0) {
+                        data.response.forEach(circuitData => {
+                            const circuitInfo = `
+                                <div class="track-card">
+                                    <h2>${circuitData.name}</h2>
+                                    <img src="${circuitData.image}" alt="${circuitData.name}">
+                                    <div class="track-info">
+                                        <p>Ubicación: ${circuitData.location ? circuitData.location : 'No disponible'}</p>
+                                        <p>País: ${circuitData.country ? circuitData.country : 'No disponible'}</p>
+                                        <p>Longitud: ${circuitData.length ? circuitData.length + ' km' : 'No disponible'}</p>
+                                        <p>Vueltas: ${circuitData.laps ? circuitData.laps : 'No disponible'}</p>
+                                        <p>Capacidad: ${circuitData.capacity ? circuitData.capacity : 'No disponible'}</p>
+                                    </div>
+                                </div>
+                            `;
+                            resultsDiv.innerHTML += circuitInfo;
+                        });
+                    } else {
+                        resultsDiv.innerHTML = '<p>No se encontraron datos de pistas.</p>';
+                    }
+                })
+                .catch(err => {
+                    console.error('Error al obtener los datos de las pistas:', err);
+                    document.getElementById('results').innerHTML = '<p>Ocurrió un error al obtener los datos de las pistas. Revisa la consola para más detalles.</p>';
+                });
+        });
+    </script>
+</body>
+</html>
