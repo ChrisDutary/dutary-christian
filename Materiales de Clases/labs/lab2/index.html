@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio #2</title>
+</head>
+<body>
+  <!-- Problema #1 -->
+  <h1>¿Cuáles son las diferencias principales entre Java y JS</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit tempora excepturi quidem nobis iure maiores molestias mollitia minima rem cumque a aut, numquam soluta nesciunt, magni obcaecati similique! Id, corrupti?</p>
+</body>
+<script>
+  // Problema #2
+  var a = 10, b = 20;
+  console.log(a + b);
+  console.log(a - b);
+  console.log(a / b);
+  console.log(a * b);
+
+  // Problema #3
+  let nombre = "Erick", apellido = "Agrazal";
+  console.log(`${nombre} ${apellido}`);
+
+  // Problema #4
+  const booleano = true, numero = 10;
+  console.log(`El tipo de dato de "booleano" es: ${typeof booleano} y, el tipo de dato de "numero" es: ${typeof numero}`);
+
+  // Problema #5
+  const obj = {
+    num: 10,
+    str: 'Erick',
+    bool: true,
+    obj: {}
+  }
+  const key = 'obj';
+  console.log(obj.num);
+  console.log(obj.str);
+  console.log(obj['bool']);
+  console.log(obj[key]);
+
+  const fn = (n) => n % 3 === 0 || n % 5 === 0 ? n : 0;
+  const suma = (n, acc=0) => {
+    if (n < 0) {
+      throw new Error("El número no puede ser menor a 0");
+    }
+    for  (let i = 0; i < n; i++) {
+      acc += fn(i);
+    }
+    return acc;
+  }
+  console.log(suma(10));
+</script>
+<script>
+  // Variable Hoisting - Pregunta de entrevista
+  // (() => {
+  //   console.log(y);
+  //    x = false;
+  //   if (x === true) {
+  //     var y = 'tst';
+  //   }
+  //   console.log(y);
+  // })();
+  // console.log(y);
+</script>
+<script>
+  // (() => {
+  //   let x = true;
+  //   if (x === true) {
+  //     let y = 'tst';
+  //     console.log(y);
+  //     if (true) {
+  //       console.log(y);
+  //     }
+  //   }
+  // })();
+</script>
+<script>
+  // (() => {
+  //   const titulo = "Lab 2";
+  //   const arr = [];
+  //   arr.push('Erick');
+  //   console.log(arr);
+  //   arr[0] = 'Agrazal';
+  //   console.log(arr);
+  // })();
+</script>
+</html>

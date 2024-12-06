@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio #8 - Administración de estudiantes</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <main>
+    <section>
+      <form action="">
+        <h3>Administración de estudiantes</h3>
+        <hr>
+        <div>
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="lastname">Apellido:</label>
+          <input type="text" id="lastname" name="lastname" required>
+        </div>
+        <button type="submit">Agregar</button>
+      </form>
+    </section>
+    <section>
+      <h3>Listado de estudiantes</h3>
+      <hr>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+          </tr>
+        </thead>
+        <tbody id="students-list"></tbody>
+      </table>
+    </section>
+  </main> 
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" type="module"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form action="">
+      <h1>Calculate</h1>
+      <div>
+        <label for="a">A: </label>
+        <input type="text" id="a" name="a">
+        <select name="operator" id="operator">
+          <option value="add" disabled>+</option>
+          <option value="subtract">-</option>
+          <option value="multiply">*</option>
+          <option value="divide">/</option>
+        </select>
+        <label for="b">B: </label>
+        <input type="text" id="b" name="b">
+        <button type="submit">Calculate</button>
+      </div>
+      <span>=</span>
+      <div id="result"></div>
+    </form>
+</body>
+</html>
